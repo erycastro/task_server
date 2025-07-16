@@ -20,16 +20,6 @@ Sistema leve em Python que permite a vários usuários:
 
 ---
 
-## Índice
-
-1. [Funcionalidades](#funcionalidades)  
-2. [Instalação rápida](#instalação-rápida)  
-3. [Arquitetura](#arquitetura)  
-4. [Protocolo de texto](#protocolo-de-texto)  
-5. [Segurança](#segurança)  
-
----
-
 ## ✨ Funcionalidades
 
 | Categoria  | Descrição                                                                                         |
