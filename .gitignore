@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.py[cod]
+*.log
+server.key
+server.crt
+storage.json
