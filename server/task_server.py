@@ -256,7 +256,7 @@ def handle(client, addr):
                         mark = "*" if code == current_list else " "
                         lines.append(f"{mark} ({code}) {lst['name']}")
                 send("Your lists:\n" + "\n".join(lines) if lines else "No lists found.")
-            elif not user:
+            elif cmd == 'ADD' or cmd == 'DONE' or cmd == 'DELETE' or cmd == 'LIST' or cmd == 'USELIST' or cmd == 'MYLISTS' or cmd == 'NEWLIST' or cmd == 'JOINLIST' or cmd == 'DELETEACC' or cmd == 'LOGOUT' and not user:
                 send("LOGIN first.")
             else:
                 send("Unknown command. Type HELP to see available commands.")

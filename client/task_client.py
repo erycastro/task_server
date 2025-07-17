@@ -11,7 +11,7 @@ try:
     HOST  = pairs.get("ServerIpAddress", "localhost")
     PORT  = int(pairs.get("ServerPort", 65432))
 except Exception:
-    print("⚠️  Falha ao ler client.config — usando localhost/65432")
+    #print("⚠️  Falha ao ler client.config — usando localhost/65432")
     HOST, PORT = "localhost", 65432
 
 ctx = ssl.create_default_context()
