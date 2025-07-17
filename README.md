@@ -32,25 +32,54 @@ Sistema leve em Python que permite a vários usuários:
 
 ---
 
-## 🚀 Instalação rápida
+## 🚀 Instalação
+
+### Opção A – Executar a partir do **código‑fonte** (requer Python 3.x)
 
 ```bash
 git clone https://github.com/erycastro/task_server.git
 cd task_server
 
 python -m venv venv
-source venv/bin/activate        # Windows: .\venv\Scripts\activate
+# Windows
+venv\Scripts\activate
+# Linux/macOS
+# source venv/bin/activate
 
 pip install -r requirements.txt
-openssl req -x509 -nodes -newkey rsa:2048 -days 365 \
+openssl req -x509 -nodes -newkey rsa:2048 -days 365 ^
         -keyout server.key -out server.crt -subj "/CN=localhost"
 
-# terminal 1
-python task_server.py
+# terminal 1
+python server/task_server.py
 
-# terminal 2
-python task_client.py
+# terminal 2
+python client/task_client.py
 ```
+### Opção B – Executar usando os **executáveis (.exe)**  
+*(não requer Python ou VS Code)*
+
+1. Baixe **TaskServerRelease.zip** na aba **Releases → Latest** do repositório e **extraia**
+
+2. **Servidor**
+
+* Abra `release\server\TaskServer.exe`.  
+* Na primeira execução o Windows Defender pode exibir um alerta; clique **Permitir acesso**.
+
+3. **Cliente(s)**  
+
+* **Mesmo PC do servidor** → basta executar `release\client\TaskClient.exe`.  
+* **Outro PC na rede** → edite `release\client\client.config` alterando:
+
+  ```xml
+  <add key="ServerIpAddress" value="IP_DO_SERVIDOR"/>
+  <add key="ServerPort"      value="65432"/>
+  ```
+
+  Salve, depois execute `TaskClient.exe`.
+
+4. Use normalmente os comandos
+
 ## 🏗️ Arquitetura
 
 ```text
